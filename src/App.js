@@ -17,7 +17,7 @@ class App extends Component {
 
   renderBtns = () => {
     return this.state.numbers.map(bus => (
-      <Col xs={6} md={6} className="btnBusCol">
+      <Col xs={4} md={4} className="btnBusCol">
         <Button
           bsStyle="primary"
           bsSize="large"
@@ -72,7 +72,7 @@ class App extends Component {
         <Navbar className="navbar" inverse>
           <Navbar.Header>
             <Navbar.Brand>
-              <a>Stalkr</a>
+              <a href="/">Stalkr</a>
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
