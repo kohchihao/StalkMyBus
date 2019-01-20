@@ -54,9 +54,16 @@ class App extends Component {
   };
 
   fetchPosition = bus => {
-    let timerId = setInterval(() => {
-      this.fetchLocation(bus);
-    }, 10000);
+    this.fetchLocation(bus);
+    // var timerId = setInterval(() => {
+    //   this.fetchLocation(bus);
+    // }, 10000);
+
+    // // after 5 seconds stop
+    // setTimeout(() => {
+    //   clearInterval(timerId);
+    //   alert('stop');
+    // }, 60000);
   };
 
   render() {
@@ -82,11 +89,13 @@ class App extends Component {
                       attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
-                    {this.state.buses.map(bus => (
-                      <Marker position={[bus.lat, bus.lng]}>
-                        <Popup>{bus.vehplate}</Popup>
-                      </Marker>
-                    ))}
+                    {this.state.buses
+                      ? this.state.buses.map(bus => (
+                          <Marker position={[bus.lat, bus.lng]}>
+                            <Popup>{bus.vehplate}</Popup>
+                          </Marker>
+                        ))
+                      : null}
                   </Map>
                 )}
                 <Grid className="grid-container">
