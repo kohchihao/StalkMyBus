@@ -2,10 +2,13 @@
   text-align: center;
   height: 100vh;
 }
-
+.navbar {
+  border-radius: 0 !important;
+  margin-bottom: 0;
+}
 .map-container { 
   width: 100%; 
-  height: 50vh; 
+  height: 60vh; 
 }
 
 .map {
@@ -21,6 +24,6 @@
 }
 
 .grid-container {
-  max-width: 1000;
-  margin: '0 auto 10px';
+  max-width: 1000px;
+  margin: 0 auto 10px;
 }

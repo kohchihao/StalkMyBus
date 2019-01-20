@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import Geolocation from 'react-geolocation';
-import { Row, Grid, Col, Button } from 'react-bootstrap';
+import { Row, Grid, Col, Button, Navbar } from 'react-bootstrap';
 import rp from 'request-promise';
 
 class App extends Component {
@@ -17,7 +17,7 @@ class App extends Component {
 
   renderBtns = () => {
     return this.state.numbers.map(bus => (
-      <Col md={6} className="btnBusCol">
+      <Col xs={6} md={6} className="btnBusCol">
         <Button
           bsStyle="primary"
           bsSize="large"
@@ -69,6 +69,13 @@ class App extends Component {
   render() {
     return (
       <div className="map-container">
+        <Navbar className="navbar" inverse>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a>Stalkr</a>
+            </Navbar.Brand>
+          </Navbar.Header>
+        </Navbar>
         <Geolocation
           render={({
             getCurrentPosition,
